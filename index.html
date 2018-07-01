@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Imperial College Investment Society</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap CSS-->
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="./plugins/bootstrap/css/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <!--jquery, popper and bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <!--Typekit CSS-->
+    <link rel="stylesheet" href="https://use.typekit.net/ewz7hyp.css">
+    <style>
+        /*General CSS*/
+
+        body {
+            background-color: #fff;
+        }
+
+        .serif {
+            font-family: "kepler-std-display", 'Kepler Std Display', 'Times New Roman', Times, serif;
+        }
+
+        .btn {
+            border-radius: 0%;
+        }
+
+        .card {
+            border-radius: 0%;
+        }
+
+        .card-img-top {
+            border-radius: 0%;
+        }
+
+        /*Navbar CSS*/
+
+        .navbar {
+            background: #fff;
+        }
+
+        .caption-nav {
+            font-weight: 300;
+            /*A lighter, Sans-serif or Serif font to be used for the title.*/
+            /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+            margin-right: 0;
+        }
+
+        .navbar-brand img {
+            margin-right: 0.75rem;
+        }
+
+        #navbarMenu .nav {
+            margin-top: 0 !important;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+        }
+
+        /*Index CSS*/
+
+        #intro-hero {
+            background: url("assets/images/intro-hero.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 0;
+        }
+
+        .jumbotron h1 {
+            margin: 0;
+        }
+
+        .hero-btn .btn {
+            margin-top: -0.75rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        /*New Update block*/
+
+        #news-hero {
+            background: #f0f5fa;
+        }
+
+        #news-title .placeholder {
+            padding-top: 3.125rem;
+        }
+
+        #news-title .jumbotron {
+            background: inherit;
+            margin: 0;
+        }
+
+        #fb-container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 500px;
+            padding: 0;
+        }
+
+        /*Mission block*/
+
+        #mission-hero {
+            margin-top: 2rem;
+        }
+
+        .mission-text {
+            font-size: 1.25rem;
+            line-height: 150%;
+        }
+
+        /*Team block*/
+
+        #team-hero {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            background-color: #f0f5fa;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .committee-card {
+            width: 18rem;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+
+        /*Sponsor block*/
+
+        #sponsor-hero {
+            background: url("assets/images/sponsor-hero.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 0rem;
+        }
+
+        .logo-container {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .logo-container img {
+            max-width: 90%;
+        }
+
+        #copyright-hero {
+            padding: 1rem;
+            /*This need to be changed when sponsors are added*/
+            margin-top: 0rem;
+            margin-bottom: 0;
+            background: #cbced1;
+        }
+
+        #copyright-hero h6 {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Facebook SDK-->
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
+        <a href="" class="navbar-brand d-none d-md-block caption-nav">
+            <img src="./assets/images/small-logo.png" width="40" height="40" alt=""> Imperial College Investment Society</a>
+        <a href="" class="navbar-brand d-md-none caption-nav">
+            <img src="./assets/images/small-logo.png" width="40" height="40" alt=""> IC Investment Society</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="nav navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a href="#intro-hero" class="nav-link" href="#intro-hero">TOP
+                        <!--<span class="sr-only">(current)</span>-->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#mission-hero" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team-hero" class="nav-link">TEAM</a>
+                </li>
+                <!--Under Construction-->
+                <!--<li class="nav-item">
+                    <a href="#sponsor-hero" class="nav-link" href="#">SPONSORS</a>
+                </li>-->
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                </li>-
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Meetings</a>
+                </li>-->
+            </ul>
+        </div>
+    </nav>
+    <!--Index page introduction contents-->
+    <div class="jumbotron jumbotron-fluid" id="intro-hero">
+        <h1 class="display-4 serif text-center text-light">Invest in the Future.</h1>
+        <p class="lead text-center hero-btn nav-item">
+            <a href="#mission-hero" class="btn btn-link btn-lg text-light" href="#" role="button">Learn more</a>
+        </p>
+    </div>
+    <!--News update block, will add more cards in the future-->
+    <div class="jumbotron jumbotron-fluid" id="news-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 align-middle" id="news-title">
+                    <div class="placeholder d-none d-md-block"></div>
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h1 class="display-4 serif">News Updates</h1>
+                            <hr class="my-4">
+                            <p class="lead">Catch up with our society's events!</p>
+                        </div>
+                    </div>
+                </div>
+                <!--FB Page Integration-->
+                <div class="col-sm-6" id="fb-continer">
+                    <div class="fb-page" data-href="https://www.facebook.com/ic.investmentsociety/" data-tabs="timeline" data-width="500px" data-height="400px"
+                        data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+                        <blockquote cite="https://www.facebook.com/ic.investmentsociety/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/ic.investmentsociety/">Imperial College Investment Society</a>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="mission-hero">
+        <div class="row">
+            <!--Placeholders-->
+            <div class="col-sm-2"></div>
+            <!--Mission Statement-->
+            <div class="col-sm-8">
+                <h1 class="display-4 serif text-center">Our mission.</h1>
+                <h4>
+                    The Imperial College Investment Society (ICIS)
+                    <small class="lead mission-text">
+                        was founded in October 2015, with the aim of educating members on value investment techniques, and is growing exponentially
+                        year on year, with aims of reaching over 1000 members for 2017-18. We host interactive weekly investment
+                        meetings where our members have the chance to present, ask questions and vote on whether to add investment
+                        pitches to our virtual portfolio. By submersing themselves in the world’s financial news, jargon
+                        and investment theory our members develop vital commercial awareness and financial acumen; which
+                        is critical to making successful applications in a competitive world. We also offer a diverse range
+                        of career opportunities ranging from Private Equity to Asset Management through office visits and
+                        speaker sessions from industry professionals.
+                    </small>
+                </h4>
+                <!--Insert signature block here, if needed-->
+            </div>
+            <!--Placeholders-->
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid" id="team-hero">
+        <h1 class="display-4 serif text-center" style="margin-bottom: 1.5rem;">Our Team.</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 text-center" style="margin-left: auto; margin-right:auto;">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/president.jpg" alt="President profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Joe Arrowsmith</br>
+                            </h4>
+                            <h5 class="card-text serif">President</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/vicepresident.jpg" alt="Vice President profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Samuel Martin Frias</h4>
+                            <h5 class="card-text serif">Vice President</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/treasurer.jpg" alt="Treasurer profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Pierre Moutounet-Cartan</h4>
+                            <h5 class="card-text serif">Treasurer</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/secretary.jpg" alt="Secretary profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Nigel Choo</h4>
+                            <h5 class="card-text serif">Secretary</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/vptech.jpg" alt="VP Tech profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Junhua Li</h4>
+                            <h5 class="card-text serif">Vice President Technology</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/vctech.jpg" alt="VC Tech profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Tom Miller</h4>
+                            <h5 class="card-text serif">Vice Chair of Technology</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/vpevents.jpg" alt="VP Events profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Sean Chai</h4>
+                            <h5 class="card-text serif">Vice President Events</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/vpsponsorship.jpg" alt="VP Marketing and Sponsorship profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Harry Zou</h4>
+                            <h5 class="card-text serif">VP Marketing &amp; Sponsorship</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/cio.jpg" alt="CIO profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Yukun Zhu</h4>
+                            <h5 class="card-text serif">Chief Investment Officer</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 text-center">
+                    <div class="card committee-card">
+                        <img class="card-img-top" src="./assets/images/committee/editor.jpg" alt="Editor-in-Chief profile pic">
+                        <div class="card-body">
+                            <h4 class="card-title serif">Thomas Alston</h4>
+                            <h5 class="card-text serif">Editor-in-Chief</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid" id="sponsor-hero">
+        <h1 class="display-4 serif text-center text-light">More coming soon...</h1>
+    </div>
+    <!--<div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-4 col-md-3 logo-container">
+                <img src="./assets/images/sponsors/test.png" alt="Test logo">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 logo-container">
+                <img src="./assets/images/sponsors/test.png" alt="Test logo">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 logo-container">
+                <img src="./assets/images/sponsors/test.png" alt="Test logo">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 logo-container">
+                <img src="./assets/images/sponsors/test.png" alt="Test logo">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 logo-container">
+                <img src="./assets/images/sponsors/test.png" alt="Test logo">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 logo-container">
+                <img src="./assets/images/sponsors/test.png" alt="Test logo">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 logo-container">
+                <img src="./assets/images/sponsors/test.png" alt="Test logo">
+            </div>
+        </div>
+    </div>-->
+    <div class="jumbotron jumbotron-fluid" id="copyright-hero">
+        <h6 class="text-center">©Imperial College Investment Society 2018</h6>
+    </div>
+    <script>
+        //Navigation buttons
+        $('.nav-item').find('a').click(function () {
+            var href = $(this).attr('href');
+            var anchor = $(href).offset().top - 70;
+            $('html, body').animate({ scrollTop: anchor });
+            return false;
+        });
+    </script>
+</body>
+
+</html>
